@@ -8,6 +8,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import path from "path";
 import { fileURLToPath } from "url";
+import { register } from "./Controllers/auth.js";
 
 /*Configuration*/
 
@@ -36,13 +37,13 @@ const Storage = multer.diskStorage({
 
 const upload = multer({ Storage });
 
+/*Routes with files */
+app.post("/auth/register", upload.single("picture"), register);
+
 /*Mongoose SetUp*/
 const PORT = process.env.PORT || 6001;
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server PORT : ${PORT}`));
   })
