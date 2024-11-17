@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const UserSchema = new mongoose.Schema(
   {
     firstName: {
@@ -32,12 +33,10 @@ const UserSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    location: {
-      type: String,
-      occupation: String,
-      viewedProfile: Number,
-      impressions: Number,
-    },
+    location: String,
+    occupation: String,
+    viewedProfile: Number,
+    impressions: Number,
   },
   { timestamps: true }
 );

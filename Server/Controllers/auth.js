@@ -1,9 +1,8 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import User from "../models/User.js";
+import User from "../Models/User.js";
 
-/*Register User :*/
-
+/* REGISTER USER */
 export const register = async (req, res) => {
   try {
     const {
@@ -15,10 +14,10 @@ export const register = async (req, res) => {
       friends,
       location,
       occupation,
-    } = req.body; //getting all the information from the req body
+    } = req.body;
 
-    const salt = await bcrypt.genSalt(); //encrypts the pasword
-    const passwordHash = await bcrypt.hash(password, salt); //password hashed
+    const salt = await bcrypt.genSalt();
+    const passwordHash = await bcrypt.hash(password, salt);
 
     const newUser = new User({
       firstName,
@@ -29,34 +28,30 @@ export const register = async (req, res) => {
       friends,
       location,
       occupation,
-      viewProfile: Math.floor(Math.random() * 10000),
+      viewedProfile: Math.floor(Math.random() * 10000),
       impressions: Math.floor(Math.random() * 10000),
     });
-
     const savedUser = await newUser.save();
-    res.status(201).json(savedUser); // perfect status code
+    res.status(201).json(savedUser);
   } catch (err) {
-    res.status(500).json({ error: err.message }); //error message
+    res.status(500).json({ error: err.message });
   }
 };
 
-/*Login*/
+/* LOGGING IN */
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
-    if (!user) {
-      return res.status(400).json({ message: "User doesn't exist" });
-    }
+    if (!user) return res.status(400).json({ msg: "User does not exist. " });
+
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Password incorrect" });
-    }
+    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
+
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     delete user.password;
-
-    res.status(201).json({ token, user });
+    res.status(200).json({ token, user });
   } catch (err) {
-    res.status(500).json({ error: err.message }); //error message
+    res.status(500).json({ error: err.message });
   }
 };
