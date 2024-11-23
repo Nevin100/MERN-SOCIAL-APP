@@ -75,7 +75,45 @@ const Navbar = () => {
 
       {/* Desktop Nav*/}
       {isNonMobileScreens ? (
-        <FlexBetween gap="2rem"></FlexBetween>
+        <FlexBetween gap="2rem">
+          <IconButton onClick={() => dispatch(setMode())}>
+            {theme.palette.mode === "dark" ? (
+              <DarkMode sx={{ fontSize: "25px" }} />
+            ) : (
+              <LightMode sx={{ color: "dark", fontSize: "25px" }} />
+            )}
+          </IconButton>
+          <Message sx={{ fontSize: "25px" }} />
+          <Notifications sx={{ fontSize: "25px" }} />
+          <Help sx={{ fontSize: "25px" }} />
+          <FormControl
+            variant="standard"
+            value={fullName}
+            sx={{ fontSize: "25px" }}
+          >
+            <Select
+              value={fullName}
+              sx={{
+                backgroundColor: neutralLight,
+                width: "150px",
+                borderRadius: "0.25rem",
+                p: "0.25rem 1rem",
+                "& .MuiSvgIcon-root": {
+                  pr: "0.25rem",
+                  width: "3rem",
+                },
+                "& .MuiISelect-select:focus": {
+                  backgroundColor: neutralLight,
+                },
+              }}
+              input={<InputBase />}
+            >
+              <MenuItem value={fullName}>
+                <Typography>{fullName}</Typography>
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </FlexBetween>
       ) : (
         <IconButton></IconButton>
       )}
