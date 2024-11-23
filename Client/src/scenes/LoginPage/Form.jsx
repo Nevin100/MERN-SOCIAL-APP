@@ -55,7 +55,37 @@ const Form = () => {
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
-  const handleSubmit = async();
+  const handleFormSubmit = async (values, onSubmtitprops) => {};
+
+  return (
+    <Formik
+      onSubmit={handleFormSubmit}
+      initialValues={isLogin ? initalValuesLogin : initalValuesRegister}
+      validationSchema={isLogin ? loginSchema : registerSchema}
+    >
+      {({
+        values,
+        errors,
+        touched,
+        handleBlur,
+        handleChange,
+        handleSubmit,
+        setFieldValue,
+        resetForm,
+      }) => (
+        <form onSubmit={handleSubmit}>
+          <Box
+            display="grid"
+            gap="30px"
+            gridTemnplateColumns="repeat(4, minmax(0,1fr))"
+            sx={{
+              "& > div": { gridColumn },
+            }}
+          ></Box>
+        </form>
+      )}
+    </Formik>
+  );
 };
 
 export default Form;
