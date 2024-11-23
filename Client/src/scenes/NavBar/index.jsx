@@ -111,11 +111,14 @@ const Navbar = () => {
               <MenuItem value={fullName}>
                 <Typography>{fullName}</Typography>
               </MenuItem>
+              <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
           </FormControl>
         </FlexBetween>
       ) : (
-        <IconButton></IconButton>
+        <IconButton onClick={() => setIsMoblileToggled(!isMobileMenuToggled)}>
+          <Menu />
+        </IconButton>
       )}
     </FlexBetween>
   );
