@@ -1,9 +1,9 @@
 import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { Box, Typography, IconButton, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setFriends } from "states";
-import FlexBetween from "./Flexbetween";
-import UserImage from "./UserImage";
+import { setFriends } from "../states/index.jsx";
+import FlexBetween from "./Flexbetween.jsx";
+import UserImage from "./UserImage.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
@@ -77,3 +77,5 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     </FlexBetween>
   );
 };
+
+export default Friend;

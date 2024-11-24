@@ -5,9 +5,9 @@ import {
   WorkOutlineOutlined,
 } from "@mui/icons-material";
 import { Box, Typography, Divider, useTheme } from "@mui/material";
-import UserImage from "Components/UserImage";
-import FlexBetween from "Components/FlexBetween";
-import WidgetWrapper from "Components/WidgetWrapper";
+import UserImage from "../Components/UserImage.jsx";
+import FlexBetween from "../Components/FlexBetween.jsx";
+import WidgetWrapper from "../Components/WidgetWrapper.jsx";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";

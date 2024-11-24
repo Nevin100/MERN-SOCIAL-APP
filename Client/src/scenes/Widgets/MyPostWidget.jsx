@@ -17,13 +17,13 @@ import {
   IconButton,
   useMediaQuery,
 } from "@mui/material";
-import FlexBetween from "Components/FlexBetween";
+import FlexBetween from "../Components/Flexbetween.jsx";
 import Dropzone from "react-dropzone";
-import UserImage from "Components/UserImage";
-import WidgetWrapper from "Components/WidgetWrapper";
+import UserImage from "../Components/UserImage.jsx";
+import WidgetWrapper from "../Components/WidgetWrapper.jsx";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state";
+import { setPosts } from "../states/index.jsx";
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
