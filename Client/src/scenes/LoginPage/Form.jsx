@@ -2,7 +2,7 @@ import { useState } from "react";
 import {
   Box,
   Button,
-  textField,
+  TextField,
   useMediaQuery,
   Typography,
   useTheme,
@@ -84,7 +84,7 @@ const Form = () => {
           >
             {isRegister && (
               <>
-                <textField
+                <TextField
                   label="First Name"
                   onBlur={handleBlur}
                   onchange={handleChange}
@@ -96,7 +96,7 @@ const Form = () => {
                   helperText={touched.firstName && errors.firstName}
                   sx={{ gridColumn: "span 2" }}
                 />
-                <textField
+                <TextField
                   label="Last Name"
                   onBlur={handleBlur}
                   onchange={handleChange}
@@ -106,7 +106,7 @@ const Form = () => {
                   helperText={touched.lastName && errors.lastName}
                   sx={{ gridColumn: "span 2" }}
                 />
-                <textField
+                <TextField
                   label="Location"
                   onBlur={handleBlur}
                   onchange={handleChange}
@@ -116,7 +116,7 @@ const Form = () => {
                   helperText={touched.location && errors.location}
                   sx={{ gridColumn: "span 4" }}
                 />
-                <textField
+                <TextField
                   label="Occupation"
                   onBlur={handleBlur}
                   onchange={handleChange}
@@ -131,7 +131,17 @@ const Form = () => {
                 <Box
                   gridColumn="span 4"
                   border={`1px solid ${palette.neutral.medium}`}
-                ></Box>
+                  borderRadius="5px"
+                  p="1rem"
+                >
+                  <Dropzone
+                    acceptedFiles=".jpg,.jpeg,.png"
+                    multiple={false}
+                    onDrop={(acceptedFiles) => {
+                      setFieldValue("picture", acceptedFiles[0]);
+                    }}
+                  ></Dropzone>
+                </Box>
               </>
             )}
           </Box>
