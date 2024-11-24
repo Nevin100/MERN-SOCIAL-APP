@@ -79,9 +79,25 @@ const Form = () => {
             gap="30px"
             gridTemnplateColumns="repeat(4, minmax(0,1fr))"
             sx={{
-              "& > div": { gridColumn },
+              "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
             }}
-          ></Box>
+          >
+            {isRegister && (
+              <>
+                <textField
+                  label="First Name"
+                  onBlur={handleBlur}
+                  onchange={handleChange}
+                  value={values.firstName}
+                  name="firstName"
+                  error={
+                    Boolean(touched.firstName) && Boolean(errors.firstName)
+                  }
+                  helperText={touched.firstName && errors.firstName}
+                />
+              </>
+            )}
+          </Box>
         </form>
       )}
     </Formik>
