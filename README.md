@@ -1,4 +1,4 @@
-**Welcome to Social**  
+**Welcome to Social- (MERN-SOCIAL-APP)**  
 A modern, feature-rich social media platform powered by the MERN stack. Social enables users to connect, share, and engage seamlessly with friends while delivering a clean, user-friendly experience.  
 
 ---  
