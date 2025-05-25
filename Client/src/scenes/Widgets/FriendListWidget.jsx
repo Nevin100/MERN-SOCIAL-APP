@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 import { Box, Typography, useTheme } from "@mui/material";
 import Friend from "../Components/Friend.jsx";
 import WidgetWrapper from "../Components/WidgetWrapper.jsx";
@@ -41,7 +43,7 @@ const FriendListWidget = ({ userId }) => {
           <Friend
             key={friend._id}
             friendId={friend._id}
-            name={`${firstName} ${lastName}`}
+            name={`${friend.firstName} ${friend.lastName}`}
             subtitle={friend.occupaion}
             userPicturePath={friend.picturePath}
           />
