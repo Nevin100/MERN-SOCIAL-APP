@@ -33,7 +33,7 @@ A sleek, modern, and **feature-packed** social media platform powered by the mig
 - **Frontend**  
   - React.js powering your smooth interactions.  
   - State management with Context API or Redux — your choice!  
-  - Styled with Tailwind CSS or Sass for that fresh, responsive look.  
+  - Styled with Tailwind CSS ,Material UI for that fresh, responsive look.  
 
 - **Backend**  
   - Node.js + Express.js serving fast REST APIs.  
