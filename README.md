@@ -1,6 +1,6 @@
 # 🚀 Welcome to **Sociopedia** - The Ultimate MERN-SOCIAL-APP! 🎉🔥
 
-A sleek, modern, and **feature-packed** social media platform powered by the mighty MERN stack.  
+A sleek, elegant, modern, and **feature-packed** social media platform powered by the mighty MERN stack.  
 **Social** lets you **connect**, **share**, and **vibe** with your friends effortlessly — all wrapped in a clean, user-friendly experience that just *works*.  
 
 ![image](https://github.com/user-attachments/assets/885e2a78-7ce2-45ea-82c4-c277d1f6f2ca)
