@@ -11,7 +11,7 @@ const FriendListWidget = ({ userId }) => {
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const token = useSelector((state) => state.token);
-  const friends = useSelector((state) => state.user.friends);
+  const friends = useSelector((state) => state.user?.friends) || [];
 
   const getFriends = async () => {
     const response = await fetch(
