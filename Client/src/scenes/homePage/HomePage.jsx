@@ -9,7 +9,14 @@ import FriendListWidget from "../Widgets/FriendListWidget.jsx";
 
 const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
-  const { _id, picturePath } = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
+
+  if (!user) {
+    // Optionally: return a loader, or redirect to login
+    return <div>Loading...</div>;
+  }
+
+  const { _id, picturePath } = user;
 
   return (
     <Box>

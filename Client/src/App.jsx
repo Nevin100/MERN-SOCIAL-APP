@@ -10,7 +10,7 @@ import { themeSettings } from "./theme.js";
 
 const App = () => {
   const mode = useSelector((state) => {
-    state.mode;
+    return state.mode;
   });
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
