@@ -6,7 +6,6 @@ A sleek, elegant, modern, and **feature-packed** social media platform powered b
 ![image](https://github.com/user-attachments/assets/885e2a78-7ce2-45ea-82c4-c277d1f6f2ca)
 
 
-
 ---
 ## Preview 📷 :
 ![image](https://github.com/user-attachments/assets/781df3f6-71c6-4099-b00c-e1fb314cb824)
